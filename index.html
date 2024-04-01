@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <header id="myheader">
+        <h1>EDITOR DE MEMES</h1>
+        <div class="div-bar">
+            <button class="boton" id="boton-img"><i class="fa-solid fa-image"></i>Imagen</button>
+            <button class="boton" id="boton-texto"><i class="fa-solid fa-font"></i>Texto</button>
+            <!-- <button class="boton" id="boton-light"><i class="fa-solid fa-lightbulb"></i></button> -->
+            <button class="boton" id="boton-modo"><i class="fa-solid fa-moon"></i>Modo Oscuro</button>
+        </div>
+    </header>
+
+    <main>
+     <section>
+       
+            <div class="editor-container" id="fondoprincipal">
+                
+                   <p id="textsuperior">Texto Superior</p>
+               
+
+                <div id="meme"><img src="" id="img-meme" class="imagen-meme" alt="" ></div>
+
+            
+                    <p id="textinferior">Texto Inferior</p>
+                
+            </div>
+        
+
+       
+              <button aria-label="btndescarga" class="descarga" id=""><i class="fa-solid fa-cloud-arrow-down"></i>Descargar Meme</button>
+    
+ 
+
+    <!-- aside imagen -->
+
+    <section class="aside-container" id="panel-aside">
+
+      
+           
+    <aside title="aside-imagen" class="aside-img" id="asideimagen">
+
+     
+        <h2 class="title">IMAGEN</h2>
+
+        <!-- URL -->
+        <div class="menu">
+            <h3 class="titulourl">URL</h3>
+            <input type="text" class="inputurl" id="imgUrl">
+       </div>
+
+       <!-- FONDO -->
+       <div class="fondo">
+        <h3>FONDO</h3>
+        <div class="btn-fondo">
+            <div class="color-btn">
+                <input type="color" id="input-fondo" value="">
+                <span id="texto-fondo-span">#FFFF</span>
+            </div>
+            <div class="editor-fondo">
+                <select id="select-fondo" class="select-fdo">
+                    <option value="unset">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminocity">Luminocidad</option>
+                    <option value="multiply">Multiplicar</option>
+                </select>
+            </div>
+
+        </div>
+
+       </div>
+
+       <!-- FILTROS -->
+       <div class="container-filtros">
+        <h3>FILTROS</h3>
+        <div class="filtros">
+            <label for="brightness">BRILLO</label>
+            <input type="range" id="brightness" onchange="actualizarFiltros()" min="0" max="1" value="1" step="0.1">
+        </div>
+        <div class="filtros">
+            <label for="opacity">OPACIDAD</label>
+            <input type="range" id="opacity" onchange="actualizarFiltros()" min="0" max="1" value="1" step="0.1">
+        </div>
+        <div class="filtros">
+            <label for="contrast">CONTRASTE</label>
+            <input type="range" id="contrast" onchange="actualizarFiltros()" min="100" max="1000" value="100">
+        </div>
+        <div class="filtros">
+            <label for="blur">DESENFOQUE</label>
+            <input type="range" id="DESENFOQUE" onchange="actualizarFiltros()" min="0" max="10" value="0" step="0.1">
+        </div>
+        <div class="filtros">
+            <label for="greyscale">ESCALA DE GRISES</label>
+            <input type="range" id="greyscale" onchange="actualizarFiltros()" min="0" max="100" value="0">
+        </div>
+        <div class="filtros">
+            <label for="sepia">SEPIA</label>
+            <input type="range" id="sepia" onchange="actualizarFiltros()" min="0" max="100" value="0">
+        </div>
+        <div class="filtros">
+            <label for="matiz">MATIZ</label>
+            <input type="range" id="matiz" onchange="actualizarFiltros()" min="0" max="360" value="0">
+        </div>
+        <div class="filtros">
+            <label for="saturate">SATURADO</label>
+            <input type="range" id="saturate" onchange="actualizarFiltros()" min="100" max="1000" value="100"step="10" >
+        </div>
+        <div class="filtros">
+            <label for="invert">NEGATIVO</label>
+            <input type="range" id="invert" onchange="actualizarFiltros()" min="0" max="1" value="0" step="0.1">
+        </div>
+        <button class="btn-reset" id="button-reset" onclick="reestrablecerFiltros()">Restablecer Filtros</button>
+       </div>
+    </aside>
+    </section>
+
+    <!-- TEXT PANEL -->
+
+
+    <aside class="text-editor" id="asidetext">
+        <h2 class="titulo-panel">TEXTO</h2>
+
+        <div class="text-sup">
+            <h3>SUPERIOR</h3>
+            <textarea class="texto-superior" id="top-text-input">TOP TEXT</textarea>
+
+            <div>
+                <input type="checkbox" id="checkbox-superior">
+                <label for="checkbox-superior">Sin texto superior</label>
+            </div>
+        </div>
+
+        <div class="text-sup">
+            <h3>INFERIOR</h3>
+            <textarea class="texto-inferior" id="bottom-text-input">TEXTO INFERIOR</textarea>
+
+            <div>
+                <input type="checkbox"  id="checkbox-inferior">
+                <label for="checkbox-inferior">Sin texto inferior</label>
+            </div>
+        </div>
+
+        <!-- FUENTE -->
+
+
+
+        <div class="fuente">
+            <h3>FUENTE</h3>
+
+            <select name="" id="select-fonts" class="select-fonts">
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="American Typewriter">American Typewriter</option>
+                <option value="Andale Mono">Andale Mono</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Impact">Impact</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+            
+            <div class="div-font">
+                <input type="number" name="" class="input-font" id="input-font" min="12" max="100" value="40">
+
+                <div class="div-align">
+                    <button class="alinear" id="align-left" aria-label="Alinear texto a la izquierda"><i class="fa-regular fa-align-left"></i></button>
+                    <button class="alinear" id="align-center" aria-label="Alinear texto al centro"><i class="fa-regular fa-align-center"></i></button>
+                    <button class="alinear" id="align-right" aria-label="Alinear texto a la izquierda"><i class="fa-regular fa-align-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLOR -->
+        
+        <div class="container-color">
+            <div class="color">
+                <div class="color-texto">
+                    <h3>COLOR</h3>
+                    <div class="color-texto-input">
+                        <input name="Text Color" type="color" id="input-color" value="">
+                        <span id="color-span" class="spancolor">#000000</span>
+                        
+                    </div>
+                </div>
+
+                <!-- background-color -->
+                <div class="container-background">
+                    <h3>FONDO</h3>
+                    <div class="background-input">
+                        <input name="Background Color" type="color" id="input-color" value="">
+                        <span id="color-background" class="spancolor">#ffffff</span>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CONTORNO -->
+
+        <div class="div-contorno">
+            <h3>CONTORNO</h3>
+            <div>
+                <button class="none" id="none">Ninguno</button>
+                <button class="light" id="light">Claro</button>
+                <button class="dark" id="dark">Oscuro</button>
+            </div>
+
+            
+         
+     </div>
+     </aside>
+
+
+  
+
+ 
+
+  
+</main>
+<script src="script.js"></script>
+</body>
+</html>

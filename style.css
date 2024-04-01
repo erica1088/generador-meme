@@ -1,0 +1,277 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(137, 43, 226, 0.629);
+  
+}
+
+header{
+    text-align: center;
+     padding: 15px; 
+    background-color: rgb(94, 69, 236);
+   
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 600px
+
+}
+
+.div-bar{
+    justify-content: center;
+}
+
+.boton{
+   background-color: blue;
+    text-transform: uppercase;
+    margin:5px;
+    padding: 10px 12px;
+    text-align: center;
+    border: white;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+    transition: 0.4s;
+    border-radius: px;
+    cursor: pointer;
+}
+
+.boton:hover{
+    color: #fff;
+
+    background-position: right center;
+}
+
+.button-reset{
+    border-radius: 10px;
+
+}
+
+
+
+
+
+/* MAIN */
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editor-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between ;
+    align-items: center;
+    overflow:hidden ;
+    padding: 10px;
+    height: 550px;
+    width: 550px;
+    background-color:rgb(0,0,0);
+    margin-top: 20px;
+}
+
+#meme{
+
+    display: flex;
+    justify-content: center;
+    width: 530px;
+    overflow:hidden;
+    height: 500px;
+    margin: 0 auto;
+
+}
+
+img{
+    text-indent: -10000px;
+}
+
+#img-meme{
+    width: 380px;
+    height: 300px;
+}
+
+.bottom-text, .top-text{
+    position: static;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color:white;
+    padding: 15px 20px;
+   
+    
+    /* box-sizing: border-box; */
+}
+
+
+
+.descarga{
+   text-align: center;
+   margin: 11px;
+   text-transform: uppercase;
+   padding: 11px 20px;
+   border-radius: 3px;
+   border: none;
+   font-size: 11px;
+   cursor: pointer;
+}
+
+
+.fa-solid {
+    margin: 4px;
+}
+
+/* ASIDE */
+
+
+.aside-container{
+background-color: mediumslateblue;
+
+
+}
+
+#panel-aside{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start ;
+    width: 258px;
+    position: fixed;
+    padding: 18px;
+    top: 0;
+    right: 0;
+    height: 100%;
+   
+    
+}
+
+.title{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7px;
+}
+
+.inputurl{
+
+    width: 100%;
+   
+    padding: 10px 0px;
+    margin-bottom: 1px;
+}
+
+
+.fondo{
+    padding: 5px;
+}
+
+.btn-fondo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px ;
+}
+
+.color-btn{
+    margin-right: 8px;
+}
+
+.filtros{
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+    width: 100%;
+}
+
+/* (ver) */
+ .button-reset{ 
+    margin-top: 11px;
+    padding: 7px;
+    border-radius: 15px;
+    border: none;
+}
+
+.text-sup{
+    margin-top: 6px;
+    padding: 5px 0px;
+}
+
+.fuente{
+    margin-top: 6px;
+    padding: 5px 0px;
+}
+
+.texto-superior, .texto-inferior, .select-fonts{
+   padding: 6px;
+   /* width: 100%; */
+}
+
+.div-font{
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+}
+
+.input-font{
+    padding: 6px;
+    width: 50px;
+    margin-top: 5px;
+}
+
+.div-align{
+    width: 50%;
+}
+
+.alinear{
+    padding:5px ;
+    margin: 5px 0 0 5px ;
+}
+
+.color{
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+}
+
+.container-color, .container-background{
+    width: 50%;
+   
+ 
+   
+}
+
+.color-texto-input,.background-input{
+   background-color: white;
+   margin: 5px;
+
+
+}
+
+.color-texto-input .input-color{
+    border:none;
+    
+    
+
+
+}
+
+.div-contorno{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+   
+}
