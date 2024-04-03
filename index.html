@@ -10,7 +10,7 @@
 </head>
 <body>
     <header id="myheader">
-        <h1>EDITOR DE MEMES</h1>
+        <h1 id="titulo-principal">Editor de Memes</h1>
         <div class="div-bar">
             <button class="boton" id="boton-img"><i class="fa-solid fa-image"></i>Imagen</button>
             <button class="boton" id="boton-texto"><i class="fa-solid fa-font"></i>Texto</button>
@@ -21,35 +21,29 @@
 
     <main>
      <section>
-       
+
             <div class="editor-container" id="fondoprincipal">
-                
-                   <p id="textsuperior">Texto Superior</p>
-               
+
+                   <p id="textsuperior" class="parrafo-texto">Texto Superior</p>
+
 
                 <div id="meme"><img src="" id="img-meme" class="imagen-meme" alt="" ></div>
 
-            
-                    <p id="textinferior">Texto Inferior</p>
-                
-            </div>
-        
 
-       
-              <button aria-label="btndescarga" class="descarga" id=""><i class="fa-solid fa-cloud-arrow-down"></i>Descargar Meme</button>
-    
- 
+                    <p id="textinferior" class="parrafo-texto">Texto Inferior</p>
+
+            </div>
+          <div class="btn-descargar">
+         <button class="descarga" id="boton-descarga"><i class="fa-solid fa-cloud-arrow-down"></i>Descargar Meme</button>
+        </div>
+
 
     <!-- aside imagen -->
 
     <section class="aside-container" id="panel-aside">
 
-      
-           
-    <aside title="aside-imagen" class="aside-img" id="asideimagen">
-
-     
-        <h2 class="title">IMAGEN</h2>
+      <aside title="aside-imagen" class="aside-img" id="asideimagen">
+       <h2 class="title">IMAGEN</h2>
 
         <!-- URL -->
         <div class="menu">
@@ -59,11 +53,11 @@
 
        <!-- FONDO -->
        <div class="fondo">
-        <h3>FONDO</h3>
+        <h3 class="titulourl">FONDO</h3>
         <div class="btn-fondo">
             <div class="color-btn">
                 <input type="color" id="input-fondo" value="">
-                <span id="texto-fondo-span">#FFFF</span>
+                <span id="texto-fondo-span"></span>
             </div>
             <div class="editor-fondo">
                 <select id="select-fondo" class="select-fdo">
@@ -82,7 +76,7 @@
 
        <!-- FILTROS -->
        <div class="container-filtros">
-        <h3>FILTROS</h3>
+        <h3 class="titulourl">FILTROS</h3>
         <div class="filtros">
             <label for="brightness">BRILLO</label>
             <input type="range" id="brightness" onchange="actualizarFiltros()" min="0" max="1" value="1" step="0.1">
@@ -122,24 +116,24 @@
         <button class="btn-reset" id="button-reset" onclick="reestrablecerFiltros()">Restablecer Filtros</button>
        </div>
     </aside>
-    </section>
+     <!-- </section> -->
 
-    <!-- TEXT PANEL -->
+
+
+    <!-- TEXTO PANEL -->
 
 
     <aside class="text-editor" id="asidetext">
-        <h2 class="titulo-panel">TEXTO</h2>
-
-        <div class="text-sup">
-            <h3>SUPERIOR</h3>
-            <textarea class="texto-superior" id="top-text-input">TOP TEXT</textarea>
+         <h2 class="title">TEXTO</h2>
+            <!-- <h3>SUPERIOR</h3>  -->
+            <!-- <textarea class="texto-superior" id="top-text-input">TOP TEXT</textarea>
 
             <div>
                 <input type="checkbox" id="checkbox-superior">
                 <label for="checkbox-superior">Sin texto superior</label>
             </div>
-        </div>
-
+        </div>  -->
+<!-- 
         <div class="text-sup">
             <h3>INFERIOR</h3>
             <textarea class="texto-inferior" id="bottom-text-input">TEXTO INFERIOR</textarea>
@@ -148,16 +142,38 @@
                 <input type="checkbox"  id="checkbox-inferior">
                 <label for="checkbox-inferior">Sin texto inferior</label>
             </div>
-        </div>
+        </div> -->
+        <form action="">
+            <label for="text-sup-input" class="textoform">SUPERIOR</label><br>
+            <input name="text-sup-input" placeholder="Top-Text" id="text-sup-input"><br>
 
-        <!-- FUENTE -->
+
+            <input name="sintexto-sup" type="checkbox">
+            <label for="sintexto-sup">Sin Texto Superior</label><br>
+
+            <label for="text-inferior-input" class="textoform">INFERIOR</label><br>
+            <input name="text-inferior-input" placeholder="Bottom-Text" id="text-inferior-input"><br>
+
+
+            <input name="sintexto-inferior" type="checkbox">
+            <label for="sintexto-inferior">Sin Texto Inferior</label><br>
+
+            <label for="fuente">FUENTE</label><br>
+            <select id="tipo-de-fuente" name="tipo-de-fuente">
+            </select>
+
+             <!-- FUENTE -->
+            <input id="size-fuente" class="ancho" type="number" placeholder="40">
+
+            <button type="button" id="align-left" ><i id="btn-alinear-izquierda" class="fa-regular fa-align-left"></i></button>
+            <button type="button" id="align-center"><i id="btn-alinear-centro" class="fa-regular fa-align-center"></i></button>
+            <button type="button" id="align-right"><i id="btn-alinear-derecha" class="fa-regular fa-align-right"></i></button>
 
 
 
-        <div class="fuente">
-            <h3>FUENTE</h3>
 
-            <select name="" id="select-fonts" class="select-fonts">
+         <h3>FUENTE</h3>
+          <select name="" id="select-fonts" class="select-fonts">
                 <option value="Arial">Arial</option>
                 <option value="Arial Black">Arial Black</option>
                 <option value="American Typewriter">American Typewriter</option>
@@ -167,68 +183,63 @@
                 <option value="Impact">Impact</option>
                 <option value="Verdana">Verdana</option>
                 <option value="Times New Roman">Times New Roman</option>
-            </select>
-            
-            <div class="div-font">
-                <input type="number" name="" class="input-font" id="input-font" min="12" max="100" value="40">
+         </select>
 
-                <div class="div-align">
-                    <button class="alinear" id="align-left" aria-label="Alinear texto a la izquierda"><i class="fa-regular fa-align-left"></i></button>
-                    <button class="alinear" id="align-center" aria-label="Alinear texto al centro"><i class="fa-regular fa-align-center"></i></button>
-                    <button class="alinear" id="align-right" aria-label="Alinear texto a la izquierda"><i class="fa-regular fa-align-right"></i></button>
-                </div>
-            </div>
-        </div>
+            <!-- COLOR -->
 
-        <!-- COLOR -->
-        
-        <div class="container-color">
-            <div class="color">
-                <div class="color-texto">
-                    <h3>COLOR</h3>
-                    <div class="color-texto-input">
-                        <input name="Text Color" type="color" id="input-color" value="">
-                        <span id="color-span" class="spancolor">#000000</span>
-                        
-                    </div>
-                </div>
+          <div class="container-color">
+                  <div class="color">
+                      <h3>COLOR</h3>
+                      <input name="Text Color" type="color" id="input-color" value="">
+                  </div>
 
-                <!-- background-color -->
-                <div class="container-background">
-                    <h3>FONDO</h3>
-                    <div class="background-input">
-                        <input name="Background Color" type="color" id="input-color" value="">
-                        <span id="color-background" class="spancolor">#ffffff</span>
-                        
-                    </div>
-                </div>
 
-            </div>
+             <!-- background-color -->
+             <div class="container-background">
+               <h3>FONDO</h3>
+                <input name="Background Color" type="color" id="input-color" value="">
+              </div>
+         </div>
 
-        </div>
+           <input type="checkbox" id="fdo-transparente">
+           <label for="fdo-transparente">FONDO TRANSPARENTE</label>
 
-        <!-- CONTORNO -->
+          <!-- CONTORNO -->
 
-        <div class="div-contorno">
+           <!-- <div class="div-contorno"> -->
             <h3>CONTORNO</h3>
-            <div>
                 <button class="none" id="none">Ninguno</button>
                 <button class="light" id="light">Claro</button>
                 <button class="dark" id="dark">Oscuro</button>
-            </div>
+          <!-- </div> -->
 
-            
-         
-     </div>
+            <H3>ESPACIADO</label>
+                <input type="number" id="espaciado-input" placeholder="35">
+
+            <h3>INTERLINEADO</h3>
+            <select name="interlineado" id="interlineado">
+                <option id="" value="0">0.8</option>
+                <option id="" value="1">1</option>
+                <option id="" value="1.2">1.2</option>
+                <option id="" value="1.5">1.5</option>
+                <option id="" value="2">2</option>
+                <option id="" value="2.5">2.5</option>
+            </select>
+        </form>
+   
      </aside>
 
 
-  
 
- 
 
-  
+   
+
+
 </main>
+  <script src="https://kit.fontawesome.com/287a092c3d.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+
+
 <script src="script.js"></script>
 </body>
 </html>
